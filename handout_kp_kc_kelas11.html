@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Handout Kimia – Hubungan Kp dan Kc | Kelas XI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+
+  .page {
+    background: #ffffff;
+    width: 794px;
+    min-height: 1123px;
+    padding: 48px 52px;
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: #1f2937;
+    font-size: 14.5px;
+    line-height: 1.75;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+  }
+
+  /* COVER */
+  .cover {
+    background: #1a2e4a;
+    color: white;
+    padding: 28px 32px 22px;
+    border-radius: 12px;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 150px; height: 150px;
+    border-radius: 50%;
+    border: 20px solid rgba(255,255,255,0.06);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; left: 70px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    border: 14px solid rgba(255,255,255,0.04);
+  }
+  .cover-label {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 6px;
+    font-weight: 300;
+  }
+  .cover h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.25;
+    margin-bottom: 5px;
+  }
+  .cover-sub {
+    font-size: 13px;
+    opacity: 0.6;
+    font-style: italic;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 24px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 0.5px solid rgba(255,255,255,0.14);
+    font-size: 11.5px;
+    opacity: 0.5;
+    letter-spacing: 0.03em;
+  }
+
+  /* SECTIONS */
+  .section { margin-bottom: 22px; }
+
+  .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+    border-left: 3px solid #1a2e4a;
+    padding-left: 10px;
+    margin-bottom: 12px;
+  }
+
+  .prose {
+    font-size: 13.5px;
+    line-height: 1.8;
+    color: #4b5563;
+    margin-bottom: 8px;
+  }
+
+  /* FORMULA BOX */
+  .formula-box {
+    background: #f0f4f9;
+    border: 0.5px solid #c4d4e8;
+    border-radius: 12px;
+    padding: 18px 24px;
+    margin: 12px 0;
+    text-align: center;
+  }
+  .formula-main {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a2e4a;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 4px;
+    letter-spacing: 0.02em;
+  }
+  .formula-note {
+    font-size: 11.5px;
+    color: #5a7a9a;
+    font-style: italic;
+  }
+
+  /* DERIVATION */
+  .derivation {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 10px 0;
+    border-left: 3px solid #c4d4e8;
+  }
+  .derivation-title {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #5a7a9a;
+    margin-bottom: 8px;
+  }
+  .derivation-step {
+    font-size: 13px;
+    color: #4b5563;
+    padding: 3px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .derivation-step .arrow {
+    color: #8aabb8;
+    font-size: 11px;
+    flex-shrink: 0;
+    margin-top: 3px;
+    min-width: 16px;
+  }
+
+  /* VARIABLE CARDS */
+  .vars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 12px 0;
+  }
+  .var-card {
+    background: #ffffff;
+    border: 0.5px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+  }
+  .var-symbol {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a2e4a;
+    margin-bottom: 3px;
+  }
+  .var-name {
+    font-size: 11.5px;
+    color: #6b7280;
+    line-height: 1.4;
+  }
+  .var-value {
+    font-size: 11.5px;
+    color: #2563eb;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+
+  /* CASES */
+  .cases {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 12px 0;
+  }
+  .case-card {
+    border-radius: 8px;
+    padding: 14px 12px;
+    text-align: center;
+  }
+  .case-card.pos { background: #eaf3de; border: 0.5px solid #c0dd97; }
+  .case-card.zero { background: #e6f1fb; border: 0.5px solid #b5d4f4; }
+  .case-card.neg { background: #faece7; border: 0.5px solid #f5c4b3; }
+  .case-delta {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .case-card.pos .case-delta { color: #3b6d11; }
+  .case-card.zero .case-delta { color: #185fa5; }
+  .case-card.neg .case-delta { color: #993c1d; }
+  .case-result { font-size: 12px; line-height: 1.55; }
+  .case-card.pos .case-result { color: #3b6d11; }
+  .case-card.zero .case-result { color: #185fa5; }
+  .case-card.neg .case-result { color: #993c1d; }
+
+  /* EXAMPLE BOX */
+  .example-box {
+    border: 0.5px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 12px 0;
+  }
+  .example-header {
+    background: #1a2e4a;
+    color: white;
+    padding: 8px 16px;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .example-header .icon {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+  .example-body {
+    padding: 14px 18px;
+    background: #ffffff;
+  }
+  .example-rxn {
+    font-family: 'Playfair Display', serif;
+    font-size: 14.5px;
+    color: #1a2e4a;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    background: #f9fafb;
+    border-radius: 6px;
+    text-align: center;
+  }
+  .solution-step {
+    font-size: 13px;
+    color: #4b5563;
+    padding: 4px 0;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .step-num {
+    background: #1a2e4a;
+    color: white;
+    font-size: 9px;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+  .answer {
+    margin-top: 10px;
+    padding: 9px 14px;
+    background: #eaf3de;
+    border-radius: 6px;
+    font-size: 13.5px;
+    color: #27500a;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  /* LATIHAN */
+  .latihan-box {
+    border: 1.5px dashed #c4d4e8;
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    background: #f8fafd;
+  }
+  .latihan-title {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #3a6ea8;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .latihan-item {
+    font-size: 13px;
+    color: #374151;
+    padding: 4px 0;
+    display: flex;
+    gap: 6px;
+    line-height: 1.7;
+  }
+  .latihan-num {
+    color: #3a6ea8;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+  .jawab-line {
+    border-bottom: 0.5px solid #c4d4e8;
+    height: 22px;
+    margin: 3px 0 6px 0;
+    width: 100%;
+  }
+
+  /* RINGKASAN */
+  .ringkasan {
+    background: #1a2e4a;
+    border-radius: 12px;
+    padding: 18px 24px;
+    color: white;
+    margin-top: 20px;
+  }
+  .ringkasan h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    color: white;
+    margin-bottom: 10px;
+    opacity: 0.9;
+  }
+  .ringkasan-item {
+    font-size: 12.5px;
+    opacity: 0.72;
+    padding: 3px 0;
+    display: flex;
+    gap: 8px;
+    line-height: 1.6;
+  }
+  .ringkasan-item::before {
+    content: '◆';
+    font-size: 7px;
+    opacity: 0.5;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+
+  .divider {
+    border: none;
+    border-top: 0.5px solid #e5e7eb;
+    margin: 20px 0;
+  }
+
+  /* PRINT */
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-label">Handout Kimia &middot; Kelas XI &middot; Kesetimbangan Kimia</div>
+    <h1>Hubungan K<sub style="font-size:18px;">p</sub> dan K<sub style="font-size:18px;">c</sub></h1>
+    <div class="cover-sub">Tetapan kesetimbangan tekanan parsial dan konsentrasi</div>
+    <div class="cover-meta">
+      <span>Materi Inti</span>
+      <span>SMA/MA Kelas XI</span>
+      <span>Semester Ganjil</span>
+    </div>
+  </div>
+
+  <!-- A. LATAR BELAKANG -->
+  <div class="section">
+    <div class="section-title">A. Latar Belakang</div>
+    <p class="prose">
+      Dalam kesetimbangan kimia, kita mengenal dua jenis tetapan kesetimbangan: <strong>K<sub>c</sub></strong> (berdasarkan konsentrasi molar, mol/L) dan <strong>K<sub>p</sub></strong> (berdasarkan tekanan parsial gas). Keduanya mendeskripsikan reaksi yang sama, sehingga terdapat hubungan matematis yang dapat digunakan untuk saling mengonversi nilainya.
+    </p>
+  </div>
+
+  <!-- B. PENURUNAN -->
+  <div class="section">
+    <div class="section-title">B. Penurunan Hubungan K<sub>p</sub> dan K<sub>c</sub></div>
+    <p class="prose">Hubungan ini diturunkan dari persamaan gas ideal:</p>
+
+    <div class="derivation">
+      <div class="derivation-title">Langkah Penurunan</div>
+      <div class="derivation-step"><span class="arrow">①</span><span>Persamaan gas ideal: <strong>PV = nRT</strong></span></div>
+      <div class="derivation-step"><span class="arrow">②</span><span>Dibagi V kedua ruas: <strong>P = (n/V)RT</strong></span></div>
+      <div class="derivation-step"><span class="arrow">③</span><span>Karena n/V = Molaritas (M): <strong>P = [M]RT = CRT</strong></span></div>
+      <div class="derivation-step"><span class="arrow">④</span><span>Substitusikan ke ekspresi K<sub>p</sub> &rarr; diperoleh hubungan K<sub>p</sub> dan K<sub>c</sub></span></div>
+    </div>
+
+    <div class="formula-box">
+      <div class="formula-main">K<sub>p</sub> = K<sub>c</sub> (RT)<sup>&Delta;n</sup></div>
+      <div class="formula-note">Persamaan utama hubungan K<sub>p</sub> dan K<sub>c</sub></div>
+    </div>
+  </div>
+
+  <!-- C. VARIABEL -->
+  <div class="section">
+    <div class="section-title">C. Keterangan Variabel</div>
+    <div class="vars-grid">
+      <div class="var-card">
+        <div class="var-symbol">R</div>
+        <div class="var-name">Tetapan gas ideal</div>
+        <div class="var-value">0,082 L&middot;atm/mol&middot;K</div>
+      </div>
+      <div class="var-card">
+        <div class="var-symbol">T</div>
+        <div class="var-name">Suhu mutlak</div>
+        <div class="var-value">dalam Kelvin (K)</div>
+      </div>
+      <div class="var-card">
+        <div class="var-symbol">&Delta;n</div>
+        <div class="var-name">Selisih koefisien gas</div>
+        <div class="var-value">mol produk &minus; mol reaktan</div>
+      </div>
+    </div>
+    <div class="derivation" style="border-left-color: #8aabb8;">
+      <div class="derivation-title">Cara Menghitung &Delta;n</div>
+      <div class="derivation-step">
+        <span class="arrow">&#9658;</span>
+        <span><strong>&Delta;n = &Sigma; koefisien gas produk &minus; &Sigma; koefisien gas reaktan</strong></span>
+      </div>
+      <div class="derivation-step" style="font-size: 12px; opacity: 0.8;">
+        <span class="arrow">&#9658;</span>
+        <span>Hanya hitung zat berwujud gas (g), bukan padatan (s) atau cairan (l)</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- D. KONDISI DELTA N -->
+  <div class="section">
+    <div class="section-title">D. Tiga Kondisi &Delta;n</div>
+    <div class="cases">
+      <div class="case-card pos">
+        <div class="case-delta">&Delta;n &gt; 0</div>
+        <div class="case-result">K<sub>p</sub> &gt; K<sub>c</sub><br><br>Jumlah mol gas produk lebih banyak dari reaktan</div>
+      </div>
+      <div class="case-card zero">
+        <div class="case-delta">&Delta;n = 0</div>
+        <div class="case-result">K<sub>p</sub> = K<sub>c</sub><br><br>Jumlah mol gas produk sama dengan reaktan</div>
+      </div>
+      <div class="case-card neg">
+        <div class="case-delta">&Delta;n &lt; 0</div>
+        <div class="case-result">K<sub>p</sub> &lt; K<sub>c</sub><br><br>Jumlah mol gas produk lebih sedikit dari reaktan</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- E. CONTOH SOAL -->
+  <div class="section">
+    <div class="section-title">E. Contoh Soal</div>
+
+    <div class="example-box">
+      <div class="example-header">
+        <span class="icon">&#8721;</span> Contoh 1 &mdash; Menghitung K<sub>p</sub> dari K<sub>c</sub>
+      </div>
+      <div class="example-body">
+        <div class="example-rxn">N<sub>2</sub>(g) + 3H<sub>2</sub>(g) &#8652; 2NH<sub>3</sub>(g)</div>
+        <p style="font-size:12.5px; color:#6b7280; margin-bottom:10px;">Pada suhu 500°C, nilai K<sub>c</sub> = 6,0 &times; 10<sup>&minus;2</sup>. Tentukan nilai K<sub>p</sub>!</p>
+        <div class="solution-step"><span class="step-num">1</span><span>Konversi suhu: T = 500 + 273 = <strong>773 K</strong></span></div>
+        <div class="solution-step"><span class="step-num">2</span><span>Hitung &Delta;n: produk = 2, reaktan = 1+3 = 4 &rarr; <strong>&Delta;n = 2 &minus; 4 = &minus;2</strong></span></div>
+        <div class="solution-step"><span class="step-num">3</span><span>K<sub>p</sub> = K<sub>c</sub> &times; (RT)<sup>&Delta;n</sup> = 6,0 &times; 10<sup>&minus;2</sup> &times; (0,082 &times; 773)<sup>&minus;2</sup></span></div>
+        <div class="solution-step"><span class="step-num">4</span><span>RT = 63,4 &rarr; (RT)<sup>&minus;2</sup> = 1/63,4<sup>2</sup> = 1/4019,6 &asymp; 2,49 &times; 10<sup>&minus;4</sup></span></div>
+        <div class="answer">K<sub>p</sub> = 6,0 &times; 10<sup>&minus;2</sup> &times; 2,49 &times; 10<sup>&minus;4</sup> &asymp; <strong>1,49 &times; 10<sup>&minus;5</sup></strong></div>
+      </div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-header">
+        <span class="icon">&#8721;</span> Contoh 2 &mdash; Kasus &Delta;n = 0
+      </div>
+      <div class="example-body">
+        <div class="example-rxn">H<sub>2</sub>(g) + I<sub>2</sub>(g) &#8652; 2HI(g)</div>
+        <p style="font-size:12.5px; color:#6b7280; margin-bottom:10px;">Jika K<sub>c</sub> = 54,3 pada suhu tertentu, tentukan K<sub>p</sub>!</p>
+        <div class="solution-step"><span class="step-num">1</span><span>&Delta;n: produk = 2, reaktan = 1+1 = 2 &rarr; <strong>&Delta;n = 2 &minus; 2 = 0</strong></span></div>
+        <div class="solution-step"><span class="step-num">2</span><span>K<sub>p</sub> = K<sub>c</sub> &times; (RT)<sup>0</sup> = K<sub>c</sub> &times; <strong>1</strong></span></div>
+        <div class="answer">K<sub>p</sub> = K<sub>c</sub> = <strong>54,3</strong>&nbsp;&nbsp;(nilai K<sub>p</sub> sama dengan K<sub>c</sub>)</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- F. LATIHAN -->
+  <div class="section">
+    <div class="section-title">F. Latihan Mandiri</div>
+    <div class="latihan-box">
+      <div class="latihan-title">&#9998; Kerjakan soal berikut!</div>
+
+      <div class="latihan-item">
+        <span class="latihan-num">1.</span>
+        <span>Reaksi: 2SO<sub>2</sub>(g) + O<sub>2</sub>(g) &#8652; 2SO<sub>3</sub>(g), pada T = 727°C, K<sub>c</sub> = 2,8. Hitung nilai K<sub>p</sub>!</span>
+      </div>
+      <div class="jawab-line"></div>
+      <div class="jawab-line"></div>
+
+      <div class="latihan-item" style="margin-top: 6px;">
+        <span class="latihan-num">2.</span>
+        <span>Reaksi: CO(g) + H<sub>2</sub>O(g) &#8652; CO<sub>2</sub>(g) + H<sub>2</sub>(g), K<sub>p</sub> = 1,0 pada T = 1000 K. Berapakah K<sub>c</sub>?</span>
+      </div>
+      <div class="jawab-line"></div>
+      <div class="jawab-line"></div>
+
+      <div class="latihan-item" style="margin-top: 6px;">
+        <span class="latihan-num">3.</span>
+        <span>Tentukan &Delta;n dan hubungan K<sub>p</sub> dengan K<sub>c</sub> untuk reaksi: PCl<sub>5</sub>(g) &#8652; PCl<sub>3</sub>(g) + Cl<sub>2</sub>(g)</span>
+      </div>
+      <div class="jawab-line"></div>
+      <div class="jawab-line"></div>
+    </div>
+  </div>
+
+  <!-- RINGKASAN -->
+  <div class="ringkasan">
+    <h3>&#128204; Rangkuman Penting</h3>
+    <div class="ringkasan-item">Rumus utama: K<sub>p</sub> = K<sub>c</sub> (RT)<sup>&Delta;n</sup>, berlaku untuk reaksi gas</div>
+    <div class="ringkasan-item">R = 0,082 L&middot;atm/mol&middot;K; T harus dalam satuan Kelvin (K = °C + 273)</div>
+    <div class="ringkasan-item">&Delta;n = jumlah koefisien gas produk &minus; jumlah koefisien gas reaktan</div>
+    <div class="ringkasan-item">Jika &Delta;n = 0, maka K<sub>p</sub> = K<sub>c</sub> (nilai keduanya identik)</div>
+    <div class="ringkasan-item">Zat padat (s) dan cair (l) tidak diperhitungkan dalam menentukan &Delta;n</div>
+  </div>
+
+</div>
+</body>
+</html>
